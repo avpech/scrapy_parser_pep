@@ -1,4 +1,4 @@
-from pathlib import Path
+import os
 
 BOT_NAME = 'pep_parse'
 
@@ -11,7 +11,7 @@ ITEM_PIPELINES = {
     'pep_parse.pipelines.PepParsePipeline': 300,
 }
 
-BASE_DIR = Path(__file__).parent
+BASE_DIR = os.getcwd()
 RESULT_FOLDER = 'results'
 DATETIME_FORMAT = '%Y-%m-%d_%H-%M-%S'
 ENCODING = 'utf-8'
