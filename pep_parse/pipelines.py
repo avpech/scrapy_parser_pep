@@ -30,7 +30,5 @@ class PepParsePipeline:
         with open(file_path, 'w', encoding=ENCODING) as file:
             writer = csv.writer(file, dialect=CSV_DIALECT)
             writer.writerow(('Статус', 'Количество'))
-            writer.writerows(
-                sorted(zip(self.counter.keys(), self.counter.values()))
-            )
+            writer.writerows(sorted(self.counter.items()))
             writer.writerow(('Total', sum(self.counter.values())))
